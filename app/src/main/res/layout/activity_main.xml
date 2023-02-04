@@ -16,12 +16,14 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/ll_player1"
             android:orientation="vertical"
             android:layout_height="200dp"
             android:gravity="center"
             >
             <TextView
                 android:layout_width="wrap_content"
+                android:id="@+id/player1"
                 android:layout_height="wrap_content"
                 android:text="Player A "
                 android:textColor="@color/black"
@@ -38,6 +40,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="200dp"
+            android:id="@+id/ll_player2"
             android:orientation="vertical"
             android:gravity="center"
             android:layout_weight="1"
@@ -45,6 +48,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/player2"
                 android:text="Player B "
                 android:textColor="@color/black"
                 android:textSize="25dp"/>
@@ -60,10 +64,21 @@
 
 
     </LinearLayout>
+    <TextView
+        android:id="@+id/playerChance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:text="TextView" />
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
+
         android:layout_gravity="center"
         android:columnCount="3"
 
@@ -137,4 +152,6 @@
             />
 
     </GridLayout>
+
+
 </LinearLayout>

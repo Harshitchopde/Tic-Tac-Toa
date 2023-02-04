@@ -2,11 +2,13 @@ package com.example.tictactoa;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,8 +16,10 @@ public
 class MainActivity extends AppCompatActivity {
     Button b11,b12,b13,b21,b22,b33,b32,b31,b23;
     boolean flage =false;
-    TextView score1,score2;
+    TextView score1,score2,player_1_name,player_2_name,playerChance;
     String winner;
+    LinearLayout player_1_ll,player_2_ll;
+
     int cnt =0;
     int Player1=0;
     int Player2 = 0;
@@ -36,6 +40,22 @@ class MainActivity extends AppCompatActivity {
         b33 = findViewById(R.id.b33);
         score1=findViewById(R.id.scoreA);
         score2=findViewById(R.id.scoreB);
+        player_1_ll = findViewById(R.id.ll_player1);
+        player_2_ll = findViewById(R.id.ll_player2);
+        player_1_name = findViewById(R.id.player1);
+        player_2_name =findViewById(R.id.player2);
+        playerChance = findViewById(R.id.playerChance);
+        playerChance.setText("Let's play the match of 5 to win");
+
+        player_2_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public
+            void onClick(View v) {
+                Dialog dialog = new Dialog(getApplicationContext());
+                
+            }
+        });
+
 
 
     }
@@ -91,10 +111,17 @@ class MainActivity extends AppCompatActivity {
         cnt++;
         if (flage==false){
             cBtn.setText("X");
+            playerChance.setText("player B chance O");
+            player_2_ll.setBackgroundColor(getResources().getColor(R.color.blue));
+            player_1_ll.setBackgroundColor(getResources().getColor(R.color.white));
             flage=true;
         }
         else {
             cBtn.setText("O");
+            playerChance.setText("player A chance X");
+            player_1_ll.setBackgroundColor(getResources().getColor(R.color.blue));
+            player_2_ll.setBackgroundColor(getResources().getColor(R.color.white));
+
             flage=false;
         }
         String B11 = b11.getText().toString().trim();
